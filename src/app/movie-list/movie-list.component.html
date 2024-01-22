@@ -1,7 +1,6 @@
 <h1>Movie list:</h1>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let movie of movieList" (click)="movie">{{movie.Title + "  " + movie.Year}}</li>
+  <li class="list-group-item" *ngFor="let movie of movieList" (click)="getMovie(movie)">{{movie.Title + "  " + movie.Year}}</li>
 </ul>
-div class="col">
 <app-movie-poster [moviePoster]="mavie"></app-movie-poster>
 <app-movie-plot [moviePlot]="mavie"></app-movie-plot>
