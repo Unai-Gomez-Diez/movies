@@ -8,5 +8,5 @@ import {Movies} from "../Shared/MockMovie";
   styleUrl: './movie-poster.component.css'
 })
 export class MoviePosterComponent {
-    @Input() moviePoster:Movie | undefined
+    @Input() moviePoster:Movie | null = null
 }

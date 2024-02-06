@@ -5,14 +5,16 @@
     <div class="col-md-6">
       <h1>Movie list:</h1>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let movie of movieList" (click)="getMovie(movie)">
+        <li class="list-group-item"  *ngFor="let movie of movieList" >
           {{ movie.Title + " " + movie.Year }}
+          <button type="button" (click)="navigateToPoster()">Poster</button>
         </li>
       </ul>
     </div>
-    <app-movie-poster [moviePoster]="mavie"></app-movie-poster>
+    <router-outlet></router-outlet>
+<!--    <app-movie-poster [moviePoster]="mavie"></app-movie-poster>-->
 
   </div>
-  <app-movie-plot [moviePlot]="mavie"></app-movie-plot>
+
 </div>
 

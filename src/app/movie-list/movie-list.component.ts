@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from "../Shared/Movie";
 import { MovieService } from "../movie.service";
+import {Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-movie-list',
@@ -10,14 +11,25 @@ import { MovieService } from "../movie.service";
 })
 export class MovieListComponent implements OnInit {
   movieList: Movie[] = [];
-  mavie:Movie | undefined
-  constructor(private movieService: MovieService) { }
+  mavie:Movie | null = null
+  constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit() {
     this.movieList = this.movieService.getMovies();
   }
+  fullNavigate(movie: Movie){
+    this.getMovie(movie)
 
+
+  }
   getMovie(movie: Movie){
     this.mavie=movie
+    this.movieService.setMovie(this.mavie)
+  }
+
+
+  navigateToPoster() {
+
+    this.router.navigate(['/poster']);
   }
 }
