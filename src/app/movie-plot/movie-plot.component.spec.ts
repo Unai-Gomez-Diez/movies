@@ -10,8 +10,8 @@ describe('MoviePlotComponent', () => {
     await TestBed.configureTestingModule({
       imports: [MoviePlotComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(MoviePlotComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
