@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Movies } from './Shared/MockMovie';
 import { Movie } from './Shared/Movie';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class MovieService {
     this.movie = movie;
   }
 
-  getMovie() {
+  getMovie(): Observable<Movie> {
     return this.movie;
   }
 }
