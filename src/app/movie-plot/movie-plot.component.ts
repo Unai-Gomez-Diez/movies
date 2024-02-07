@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from "../Shared/Movie";
 import { MovieService } from "../movie.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-movie-plot',
@@ -8,7 +9,7 @@ import { MovieService } from "../movie.service";
   styleUrl: './movie-plot.component.css'
 })
 export class MoviePlotComponent implements OnInit {
-  @Input() moviePlot: Movie | null = null
+  moviePlot: Movie | null = null
   constructor(private movieService: MovieService) { }
   getMovie() {
     this.moviePlot = this.movieService.getMovie()

@@ -1,3 +1,4 @@
-<h1>Poster: </h1>
-<p>{{movie?.}}</p>
-<img src="{{movie?.Poster}}">
+<h1>Poster:</h1>
+
+<img [src]="movie?.Poster" alt="{{movie?.Title}}">
+<app-movie-plot ></app-movie-plot>

@@ -19,7 +19,11 @@ export class MovieService {
     this.movie = movie;
   }
 
-  getMovie(): Observable<Movie> {
-    return this.movie;
+  getMovie(): Movie {
+    return <Movie>this.movie;
+  }
+  getMovieObservable(): Observable<Movie | null> {
+
+    return of(this.movie);
   }
 }
